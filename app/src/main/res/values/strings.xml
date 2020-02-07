@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Jetpack</string>
+    <string name="my_favorites_title">My favorites</string>
+    <string name="plant_store_title">Plant store</string>
+    <string name="add_favorites">Add favorites</string>
+    <string name="favorites_on">Favorites On</string>
 </resources>
