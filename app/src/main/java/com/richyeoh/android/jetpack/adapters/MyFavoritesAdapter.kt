@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.richyeoh.android.jetpack.R
+import com.richyeoh.android.jetpack.data.MyFavorite
 import com.richyeoh.android.jetpack.databinding.RvItemMyFavoritesBinding
 
 class MyFavoritesAdapter :
-    ListAdapter<Any, MyFavoritesAdapter.ViewHolder>(MyFavoritesDiffCallback()) {
+    ListAdapter<MyFavorite, MyFavoritesAdapter.ViewHolder>(MyFavoritesDiffCallback()) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             DataBindingUtil.inflate(
@@ -29,26 +31,21 @@ class MyFavoritesAdapter :
     class ViewHolder(private val binding: RvItemMyFavoritesBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        init {
-            binding.setClickListener { view ->
-                //TODO
-            }
-        }
-
-        fun bind(any: Any) {
+        fun bind(item: MyFavorite) {
             with(binding) {
+                favorite = item
                 executePendingBindings()
             }
         }
     }
 }
 
-class MyFavoritesDiffCallback : DiffUtil.ItemCallback<Any>() {
-    override fun areItemsTheSame(oldItem: Any, newItem: Any): Boolean {
-        return true
+class MyFavoritesDiffCallback : DiffUtil.ItemCallback<MyFavorite>() {
+    override fun areItemsTheSame(oldItem: MyFavorite, newItem: MyFavorite): Boolean {
+        return oldItem.favoriteId == newItem.favoriteId
     }
 
-    override fun areContentsTheSame(oldItem: Any, newItem: Any): Boolean {
-        return true
+    override fun areContentsTheSame(oldItem: MyFavorite, newItem: MyFavorite): Boolean {
+        return oldItem == newItem
     }
 }

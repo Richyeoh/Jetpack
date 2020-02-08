@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="plant"
+            type="com.richyeoh.android.jetpack.data.Plant" />
+
+        <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
     </data>
@@ -27,6 +31,7 @@
 
             <ImageView
                 android:id="@+id/ivFlowerImage"
+                imageFromUrl="@{plant.imageUrl}"
                 android:layout_width="0dp"
                 android:layout_height="95dp"
                 android:scaleType="centerCrop"
@@ -41,6 +46,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center_horizontal"
+                android:text="@{plant.name}"
                 android:textAppearance="?attr/textAppearanceListItem"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

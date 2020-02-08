@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFlowers"
+        android:id="@+id/rvPlantStore"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingStart="12dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="12dp"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/rv_item_plant_store" />

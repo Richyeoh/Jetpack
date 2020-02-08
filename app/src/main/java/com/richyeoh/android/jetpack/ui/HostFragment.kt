@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.richyeoh.android.jetpack.R
-import com.richyeoh.android.jetpack.adapters.FAVORITES_PAGE_INDEX
+import com.richyeoh.android.jetpack.adapters.MY_FAVORITES_PAGE_INDEX
 import com.richyeoh.android.jetpack.adapters.PLANT_STORE_PAGE_INDEX
 import com.richyeoh.android.jetpack.adapters.HostViewPagerAdapter
 import com.richyeoh.android.jetpack.databinding.FragmentHostBinding
@@ -39,7 +39,7 @@ class HostFragment : Fragment() {
 
     private fun getTabIcon(position: Int): Int {
         return when (position) {
-            FAVORITES_PAGE_INDEX -> R.drawable.ic_like_selector
+            MY_FAVORITES_PAGE_INDEX -> R.drawable.ic_like_selector
             PLANT_STORE_PAGE_INDEX -> R.drawable.ic_store_selector
             else -> throw IndexOutOfBoundsException()
         }
@@ -47,7 +47,7 @@ class HostFragment : Fragment() {
 
     private fun getTabTitle(position: Int): String? {
         return when (position) {
-            FAVORITES_PAGE_INDEX -> getString(R.string.my_favorites_title)
+            MY_FAVORITES_PAGE_INDEX -> getString(R.string.my_favorites_title)
             PLANT_STORE_PAGE_INDEX -> getString(R.string.plant_store_title)
             else -> null
         }
